@@ -1,0 +1,14 @@
+@use '../../../styles/variables' as v;
+
+.search {
+  margin: auto;
+  text-align: center;
+  background-color: v.$yellow;
+  padding: 1rem;
+  border-radius: 0.5rem;
+
+  &__input {
+    border: none;
+    border-radius: 0.5rem;
+  }
+}

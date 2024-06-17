@@ -1,2 +1,14 @@
 @use 'reset';
 @use 'variables' as v;
+
+@font-face {
+  font-family: 'Pokenormal';
+  src: local('Pokenormal'),
+    url('/src/assets/fonts/pokemon-text.ttf') format('truetype');
+}
+
+body {
+  background-color: v.$d-blue;
+  padding: 1rem;
+  font-family: 'Pokenormal', sans-serif;
+}

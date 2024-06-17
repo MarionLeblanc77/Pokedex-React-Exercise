@@ -1,0 +1,18 @@
+@use '../../../styles/variables' as v;
+@import url('https://fonts.cdnfonts.com/css/pokemon-solid');
+
+.header {
+  text-align: center;
+
+  &__logo {
+    display: block;
+    margin: auto;
+    width: 40vw;
+  }
+  &__title {
+    font-family: 'Pokemon solid', sans-serif;
+    font-size: 3rem;
+    color: v.$l-blue;
+    letter-spacing: calc(0.1 * 3rem);
+  }
+}
