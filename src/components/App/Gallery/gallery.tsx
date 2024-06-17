@@ -11,9 +11,11 @@ function Gallery({ countResult, pokemonList }: GalleryProps) {
   return (
     <section className="gallery">
       <h2 className="gallery__title"> {countResult} Pokémon trouvés.</h2>
-      {pokemonList.map((pokemon) => {
-        return <Card pokemon={pokemon} />;
-      })}
+      <div className="gallery__cards">
+        {pokemonList.map((pokemon) => {
+          return <Card pokemon={pokemon} />;
+        })}
+      </div>
     </section>
   );
 }

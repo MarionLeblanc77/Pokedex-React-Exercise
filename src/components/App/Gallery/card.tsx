@@ -21,17 +21,22 @@ function Card({ pokemon }: CardProps) {
     return type.type.name;
   });
 
-  console.log(types);
-
   return (
     <article className="card">
-      <h3>{pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}</h3>
+      <h3 className="card__title">
+        {pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}
+      </h3>
       <img
+        className="card__img"
         src={`https://unpkg.com/pokeapi-sprites@2.0.2/sprites/pokemon/other/dream-world/${pokemonInfo?.id}.svg`}
         alt=""
       />
       {types?.map((type) => {
-        return <li>{type.charAt(0).toUpperCase() + type.slice(1)}</li>;
+        return (
+          <li className="card__types">
+            {type.charAt(0).toUpperCase() + type.slice(1)}
+          </li>
+        );
       })}
     </article>
   );

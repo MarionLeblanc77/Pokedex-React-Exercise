@@ -1,14 +1,43 @@
 @use '../../../styles/variables' as v;
+@import url('https://fonts.cdnfonts.com/css/pokemon-solid');
 
 .gallery {
   margin: 1rem;
   text-align: center;
+
+  &__cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
 }
 
 .card {
-  display: flex;
   background-color: v.$l-blue;
   margin: 0.5rem;
-  pad: 0.5rem;
+  padding: 0.5rem;
   border-radius: 0.5rem;
+  width: calc(25% - 1rem);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &__title {
+    font-family: 'Pokemon solid';
+    font-size: 2rem;
+    color: v.$yellow;
+    text-shadow: 2px 2px 1px v.$d-blue, -2px -2px 1px v.$d-blue;
+    letter-spacing: calc(0.1 * 2rem);
+  }
+  &__img {
+    display: block;
+    max-width: 20vw;
+    max-height: 25vh;
+    margin: 1rem;
+  }
+
+  &__types {
+    list-style: none;
+  }
 }
