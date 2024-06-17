@@ -1,10 +1,19 @@
+import { IList, IPokemon } from '../../../@types/pokemon';
 import Card from './card';
 import './gallery.scss';
 
-function Gallery() {
+interface GalleryProps {
+  countResult: number;
+  pokemonList: IList[];
+}
+
+function Gallery({ countResult, pokemonList }: GalleryProps) {
   return (
     <section className="gallery">
-      <Card />
+      <h2 className="gallery__title"> {countResult} Pokémon trouvés.</h2>
+      {pokemonList.map((pokemon) => {
+        return <Card pokemon={pokemon} />;
+      })}
     </section>
   );
 }

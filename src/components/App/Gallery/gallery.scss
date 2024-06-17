@@ -1,9 +1,12 @@
 @use '../../../styles/variables' as v;
 
 .gallery {
-  display: flex;
+  margin: 1rem;
+  text-align: center;
 }
+
 .card {
+  display: flex;
   background-color: v.$l-blue;
   margin: 0.5rem;
   pad: 0.5rem;
