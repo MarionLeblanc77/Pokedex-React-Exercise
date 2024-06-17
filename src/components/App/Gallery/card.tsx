@@ -1,43 +1,25 @@
 import { useEffect, useState } from 'react';
-import { IList, IPokemon } from '../../../@types/pokemon';
+import { IPokemon } from '../../../@types/pokemon';
 import axiosInstance from '../../../axios/axios';
 import './gallery.scss';
 interface CardProps {
-  pokemon: IList;
+  pokemon: IPokemon;
 }
 function Card({ pokemon }: CardProps) {
-  const [pokemonInfo, setPokemonInfo] = useState<IPokemon>();
-
-  const getOnePokemon = async (name: string) => {
-    const result = await axiosInstance.get(`/pokemon/${name}`);
-    setPokemonInfo(result.data);
-  };
-
-  useEffect(() => {
-    getOnePokemon(pokemon.name);
-  }, []);
-
-  const types = pokemonInfo?.types.map((type) => {
-    return type.type.name;
-  });
-
   return (
     <article className="card">
-      <h3 className="card__title">
-        {pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}
-      </h3>
-      <img
-        className="card__img"
-        src={`https://unpkg.com/pokeapi-sprites@2.0.2/sprites/pokemon/other/dream-world/${pokemonInfo?.id}.svg`}
-        alt=""
-      />
-      {types?.map((type) => {
-        return (
-          <li className="card__types">
-            {type.charAt(0).toUpperCase() + type.slice(1)}
-          </li>
-        );
-      })}
+      <h3 className="card__title">{pokemon.name.fr}</h3>
+      <img className="card__img" src={pokemon.sprites.regular} alt="" />
+      <div className="card__types">
+        {pokemon.types.map((type) => {
+          return (
+            <li key={type.name} className="card__types__type">
+              <img className="card__types__type__icon" src={type.image} />
+              <p className="card__types__type__name">{type.name}</p>
+            </li>
+          );
+        })}
+      </div>
     </article>
   );
 }

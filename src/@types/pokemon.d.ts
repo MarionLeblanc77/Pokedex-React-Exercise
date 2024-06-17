@@ -1,19 +1,17 @@
-export interface IList {
-  name: string;
-  url: string;
-}
-
 export interface IPokemon {
-  id: number;
-  name: string;
-  order: number;
+  pokedex_id: number;
+  name: {
+    fr: string;
+    en: string;
+  };
+  generation: number;
   types: IType[];
+  sprites: {
+    regular: string;
+  };
 }
 
 export interface IType {
-  slot: number;
-  type: {
-    name: string;
-    url: string;
-  };
+  name: string;
+  image: string;
 }

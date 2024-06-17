@@ -33,11 +33,21 @@
   &__img {
     display: block;
     max-width: 20vw;
-    max-height: 25vh;
     margin: 1rem;
   }
 
   &__types {
-    list-style: none;
+    &__type {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      margin: 0.5rem;
+
+      &__icon {
+        height: 2rem;
+        margin-right: 0.5rem;
+      }
+    }
   }
 }
